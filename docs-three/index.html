@@ -128,6 +128,7 @@
 
         // create atToolkitContext
         var arToolkitContext = new THREEx.ArToolkitContext({
+            cameraParametersUrl: './data/camera_para.dat',
             detectionMode: 'mono',
             canvasWidth: 480,
             canvasHeight: 640,
@@ -149,7 +150,7 @@
         // init controls for camera
         var markerControls = new THREEx.ArMarkerControls(arToolkitContext, camera, {
             type : 'nft',
-            descriptorsUrl : 'resources/pinball/pinball',
+            descriptorsUrl : './resources/pinball/pinball',
             changeMatrixMode: 'cameraTransformMatrix'
         })
 
@@ -165,7 +166,7 @@
         var threeGLTFLoader = new THREE.GLTFLoader();
         var model;
 
-        threeGLTFLoader.load("resources/Flamingo.glb", function (gltf) {
+        threeGLTFLoader.load("./resources/Flamingo.glb", function (gltf) {
             model = gltf.scene.children[0];
             model.name = 'Flamingo';
 
